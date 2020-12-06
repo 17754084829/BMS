@@ -10,15 +10,15 @@ import javax.sql.DataSource;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class C3P0_Data_Source {
-	 //µÃµ½Ò»¸öÊı¾İÔ´
+	 //å¾—åˆ°ä¸€ä¸ªæ•°æ®æº
     private static DataSource dataSource = new ComboPooledDataSource();
 
-    //´ÓÊı¾İÔ´ÖĞµÃµ½ÓĞ¸öÁ¬½Ó¶ÔÏó
+    //ä»æ•°æ®æºä¸­å¾—åˆ°æœ‰ä¸ªè¿æ¥å¯¹è±¡
     public static Connection getConnection(){
         try{
             return dataSource.getConnection();
         }catch (SQLException e){
-            throw new RuntimeException("·şÎñÆ÷´íÎó");
+            throw new RuntimeException("æœåŠ¡å™¨é”™è¯¯");
         }
     }
 

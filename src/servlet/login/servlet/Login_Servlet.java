@@ -16,7 +16,7 @@ public class Login_Servlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HashMap<String, String> hashMap=new HashMap<>();
-		hashMap.put("200", "µÇÂ¼³É¹¦");
+		hashMap.put("200", "ç™»å½•æˆåŠŸ");
 		req.getSession().setAttribute("verify", Filter_utils.getIpAddr(req));
 		resp.setContentType("application/json");
 		PrintWriter printWriter=resp.getWriter();

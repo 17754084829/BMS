@@ -19,7 +19,7 @@ import com.mysql.cj.Session;
 import filter.util.Filter_utils;
 
 
-//¹ıÂËÆ÷,ÅĞ¶Ï½øÈë¹ÜÀíÒ³ÃæµÄÇëÇóÊÇ·ñºÏ·¨
+//è¿‡æ»¤å™¨,åˆ¤æ–­è¿›å…¥ç®¡ç†é¡µé¢çš„è¯·æ±‚æ˜¯å¦åˆæ³•
 @WebFilter(filterName="login_filter",urlPatterns= {"/admin/*"})
 public class Login_filter implements Filter{
 	@Override
@@ -35,7 +35,7 @@ public class Login_filter implements Filter{
 			PrintWriter print=response.getWriter();
 			HashMap<String, String> hashMap=new HashMap<>();
 			hashMap.put("code", "403");
-			hashMap.put("msg", "·Ç·¨ÓÃ»§");
+			hashMap.put("msg", "éæ³•ç”¨æˆ·");
 			print.write(Filter_utils.getJsonString(hashMap));
 			print.flush();
 			print.close();

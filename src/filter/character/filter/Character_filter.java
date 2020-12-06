@@ -15,7 +15,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-//处理数据乱码问题
+//澶勭悊鏁版嵁涔辩爜闂
 @WebFilter(filterName="character",urlPatterns= {"/*"})
 public class Character_filter implements Filter{
 	@Override
@@ -27,7 +27,7 @@ public class Character_filter implements Filter{
 		
 		}
 		response.setCharacterEncoding("UTF-8");
-		System.out.println("字符处理完成");
+		System.out.println("瀛楃澶勭悊瀹屾垚");
 		chain.doFilter(request2, response);		
 	}
 	@Override
