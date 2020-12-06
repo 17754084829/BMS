@@ -14,7 +14,6 @@ import model.User;
 public class DB_login_iml  implements DB_Login{
 	@Override
 	public boolean verify(String username, String passwd) {
-		
 		return false;
 	}
 	@Override
@@ -25,14 +24,8 @@ public class DB_login_iml  implements DB_Login{
 	}
 	@Override
 	public User getUserBYid(String sid) {
-		// TODO Auto-generated method stub
-		ResultSet resultSet=null;
-		User user=null;
-		while (resultSet.next()) {
-			user=new User();
-			user.setUsername(resultSet.getString(columnIndex))
 			
-		}
-		return user;
+		
+		return null;
 	}
 }
