@@ -3,7 +3,7 @@
     <default-config>
 
         <property name="driverClass">com.mysql.jdbc.Driver</property>
-        <property name="jdbcUrl">jdbc:mysql://152.89.244.85:1886/BMS</property>
+        <property name="jdbcUrl">jdbc:mysql://124.71.186.115:1886/BMS</property>
         <property name="user">root</property>
         <property name="password">cocacola</property>
         <property name="initialPoolSize">10</property>

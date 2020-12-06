@@ -33,6 +33,12 @@ public class Character_filter implements Filter{
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		// TODO Auto-generated method stub
+		try {
+			Class.forName("db.utils.C3P0_Data_Source");
+			System.out.println("数据库连接池启动");
+			}catch (Exception e) {
+				System.out.println("数据库连接池失败");
+			}
 		
 	}
 	@Override

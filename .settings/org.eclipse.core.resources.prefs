@@ -1,6 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/db/interfaces/DB_Login.java=UTF-8
-encoding//src/db/interfaces_iml/DB_login_iml.java=UTF-8
+encoding//src/db/login/DB_login.java=UTF-8
 encoding//src/db/utils/C3P0_Data_Source.java=UTF-8
 encoding//src/filter/character/filter/Character_filter.java=UTF-8
 encoding//src/filter/login/filter/Login_filter.java=UTF-8
