@@ -23,6 +23,23 @@ public class reader {
 	private int readerusable;//有效否
 	private String booknumber;//书编号
 	
+	public reader() {
+		
+	}	
+	public reader(int readerid, String readername, String readertelephone, int readersex, Date registerdate,
+			Date borrowtime, Date returntime, int readerusable, String booknumber) {
+		super();
+		this.readerid = readerid;
+		this.readername = readername;
+		this.readertelephone = readertelephone;
+		this.readersex = readersex;
+		this.registerdate = registerdate;
+		this.borrowtime = borrowtime;
+		this.returntime = returntime;
+		this.readerusable = readerusable;
+		this.booknumber = booknumber;
+	}
+	
 	public int getReaderid() {
 		return readerid;
 	}

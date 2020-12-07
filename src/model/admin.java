@@ -22,6 +22,22 @@ public class admin {
 	private int roles;//角色
 	private int usable;//有效否
 	
+	public admin() {
+		
+	}	
+	public admin(int id, String name, String password, String telephone, int sex, Date addtime, int roles, int usable) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.password = password;
+		this.telephone = telephone;
+		this.sex = sex;
+		this.addtime = addtime;
+		this.roles = roles;
+		this.usable = usable;
+	}
+
+
 	public int getId() {
 		return id;
 	}
