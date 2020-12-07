@@ -18,11 +18,11 @@ public class DB_login{
 		PreparedStatement preparedStatement=null;
 		ResultSet rSet=null;
 		try {
-		preparedStatement=connection.prepareStatement("select NAME,PASSWORD from USER WHERE NAME=?");
+		preparedStatement=connection.prepareStatement("select name,password from admin WHERE name=?");
 		preparedStatement.setString(1,username);
 		rSet=preparedStatement.executeQuery();
 		while (rSet.next()) {
-			if(passwd!=null && passwd.equals(rSet.getString("PASSWORD")))
+			if(passwd!=null && passwd.equals(rSet.getString("password")))
 				return true;
 		}
 		}catch (Exception e) {
