@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/db/login/DB_login.java=UTF-8
+encoding//src/db/utils/C3P0_Data_Source.java=UTF-8
+encoding//src/filter/character/filter/Character_filter.java=UTF-8
+encoding//src/filter/login/filter/Login_filter.java=UTF-8
+encoding//src/filter/util/Filter_utils.java=UTF-8
+encoding//src/model/User.java=UTF-8
+encoding//src/servlet/login/servlet/Login_Servlet.java=UTF-8
+encoding//src/servlet/login/utils/VerifyCode.java=UTF-8
+encoding//src/servlet/login/verify_code_servlet/Verify_Code_Servlet.java=UTF-8
