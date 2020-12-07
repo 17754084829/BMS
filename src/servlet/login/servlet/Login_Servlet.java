@@ -17,12 +17,17 @@ public class Login_Servlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HashMap<String, String> hashMap=new HashMap<>();
+		String code=req.getParameter("code");
+		if(code!=null && code.equals(req.getSession().getAttribute("code"))) {
 		boolean b=DB_login.verify(req.getParameter("username"), req.getParameter("passwd"));
 		if(b) {
 		hashMap.put("200", "登录成功");
 		req.getSession().setAttribute("verify", Filter_utils.getIpAddr(req));
 		}else {
 			hashMap.put("-1", "账户或密码无效");
+		}
+		}else {
+			hashMap.put("-1", "验证码不正确");
 		}
 		resp.setContentType("application/json");
 		PrintWriter printWriter=resp.getWriter();
