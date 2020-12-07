@@ -18,9 +18,9 @@ public class DB_login{
 		PreparedStatement preparedStatement=null;
 		ResultSet rSet=null;
 		try {
-<<<<<<< HEAD
+
 		preparedStatement=connection.prepareStatement("select name,password from admin where name=?");
-==
+
 
 
 		preparedStatement.setString(1,username);
