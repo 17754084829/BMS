@@ -11,7 +11,7 @@ import java.sql.Date;
  * 管理员
  * ID,名字,密码,电话,性别,录入时间,角色,有效否
  */
-public class admin {
+public class Admin {
 
 	private int id;//ID
 	private String name;//名字
@@ -22,10 +22,10 @@ public class admin {
 	private int roles;//角色
 	private int usable;//有效否
 	
-	public admin() {
+	public Admin() {
 		
 	}	
-	public admin(int id, String name, String password, String telephone, int sex, Date addtime, int roles, int usable) {
+	public Admin(int id, String name, String password, String telephone, int sex, Date addtime, int roles, int usable) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -86,7 +86,4 @@ public class admin {
 	public void setUsable(int usable) {
 		this.usable = usable;
 	}
-	
-	
-	
 }
