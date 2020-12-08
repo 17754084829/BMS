@@ -25,6 +25,7 @@ public class Admin {
 	public Admin() {
 		
 	}	
+
 	public Admin(int id, String name, String password, String telephone, int sex, Date addtime, int roles, int usable) {
 		super();
 		this.id = id;
@@ -36,7 +37,6 @@ public class Admin {
 		this.roles = roles;
 		this.usable = usable;
 	}
-
 
 	public int getId() {
 		return id;
