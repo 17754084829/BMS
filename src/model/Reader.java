@@ -11,7 +11,7 @@ import java.sql.Date;
  * 用户
  * 用户ID,名字,电话,性别,录入时间,借书时间,还书时间,书编号（外键）,有效否
  */
-public class reader {
+public class Reader {
 
 	private int readerid;//用户ID
 	private String readername;//名字
@@ -23,10 +23,10 @@ public class reader {
 	private int readerusable;//有效否
 	private String booknumber;//书编号
 	
-	public reader() {
+	public Reader() {
 		
 	}	
-	public reader(int readerid, String readername, String readertelephone, int readersex, Date registerdate,
+	public Reader(int readerid, String readername, String readertelephone, int readersex, Date registerdate,
 			Date borrowtime, Date returntime, int readerusable, String booknumber) {
 		super();
 		this.readerid = readerid;
