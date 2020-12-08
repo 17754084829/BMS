@@ -94,7 +94,4 @@ public class Reader {
 	public void setBooknumber(String booknumber) {
 		this.booknumber = booknumber;
 	}
-
-	
-	
 }

@@ -86,7 +86,4 @@ public class Admin {
 	public void setUsable(int usable) {
 		this.usable = usable;
 	}
-	
-	
-	
 }
