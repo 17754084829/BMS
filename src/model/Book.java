@@ -10,7 +10,7 @@ import java.sql.Date;
 /*
  * 图书 书编号（主键）,书ID，书名字,库存数,类别,位置,录入时间,作者,预览图
  */
-public class book {
+public class Book {
 
 	private String booknumber;// 书编号
 	private int bookid;// 书ID
@@ -22,10 +22,10 @@ public class book {
 	private String author;// 作者
 	private String logo;// 预览图
 
-	public book() {
+	public Book() {
 
 	}
-	public book(String booknumber, int bookid, String bookname, int stock, String kind, String location, Date bookdate,
+	public Book(String booknumber, int bookid, String bookname, int stock, String kind, String location, Date bookdate,
 			String author, String logo) {
 		super();
 		this.booknumber = booknumber;
