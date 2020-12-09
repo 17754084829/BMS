@@ -133,7 +133,7 @@
                     const res=JSON.parse(resp);
                     if(res.code === "200") {
                         window.localStorage.setItem("user", res.data);
-                        window.location.href = '/BMS/admin.html';
+                        window.location.href = '/BMS/admin/admin.html';
                         return;
                         //把用户信息存储到浏览缓存中
                     }else{
