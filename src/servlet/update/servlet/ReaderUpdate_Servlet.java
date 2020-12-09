@@ -2,7 +2,6 @@ package servlet.update.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import java.util.HashMap;
 
 import javax.servlet.ServletException;
@@ -12,23 +11,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import db.update.DB_update;
+import db.update.Reader_update;
 import filter.util.Filter_utils;
-import model.Admin;
+import model.Reader;
 
-@WebServlet(name = "update_servlet", urlPatterns = { "/update" })
-public class Update_Servlet extends HttpServlet {
+@WebServlet(name = "readerupdate_servlet", urlPatterns = { "/update/reader" })
+public class ReaderUpdate_Servlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HashMap<String, String> hashMap = new HashMap<>();
-		Admin m = new Admin();
-		//id，姓名，密码，电话，性别
-		m.setId(Integer.parseInt(req.getParameter("id")==null?"0":req.getParameter("id")));
-		m.setName(req.getParameter("name")==null?"xxxx":req.getParameter("name"));
-		m.setPassword(req.getParameter("password")==null?"xxxx":req.getParameter("password"));
-		m.setTelephone(req.getParameter("telephone")==null?"xxxx":req.getParameter("telephone"));
-		m.setSex(Integer.parseInt(req.getParameter("sex")==null?"0":req.getParameter("sex")));
-					
-		boolean b = DB_update.update(m);
+		Reader reader = new Reader();
+		//id，姓名，电话，性别，书编号
+		reader.setReaderid(Integer.parseInt(req.getParameter("readerid")==null?"0":req.getParameter("readerid")));
+		reader.setReadername(req.getParameter("readername")==null?"xxxx":req.getParameter("readername"));
+		reader.setReadertelephone(req.getParameter("readertelephone")==null?"xxxx":req.getParameter("readertelephone"));
+		reader.setReadersex(Integer.parseInt(req.getParameter("readersex")==null?"0":req.getParameter("readersex")));
+		//reader.setBooknumber(req.getParameter("booknumber")==null?"xxxx":req.getParameter("booknumber"));
+				
+		boolean b = Reader_update.update(reader);
 		if (b) {
 			hashMap.put("200", "修改成功");
 			req.getSession().setAttribute("verify", Filter_utils.getIpAddr(req));
