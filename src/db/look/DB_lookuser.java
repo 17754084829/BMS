@@ -21,7 +21,7 @@ public class DB_lookuser {
 			while (rs.next()) {
 				Admin ad = new Admin();
 				ad.setId(rs.getInt("id"));
-				ad.setName(rs.getNString("name"));
+				ad.setName(rs.getString("name"));
 				arr.add(ad);
 			}
 		} catch (Exception e) {

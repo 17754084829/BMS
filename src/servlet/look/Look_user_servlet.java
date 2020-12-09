@@ -28,10 +28,10 @@ public class Look_user_servlet extends HttpServlet {
 		admin.setId(m);
 		ArrayList<Admin> b = DB_lookuser.user_look(m);
 		if (b != null) {
-			hashMap.put("200", "1");
+			hashMap.put("200", "查询结果为：");
 			req.getSession().setAttribute("verify", Filter_utils.getIpAddr(req));
 		} else {
-			hashMap.put("-1", "0");
+			hashMap.put("-1", "无法查询！");
 		}
 		hashMap.put("data", b);
 		hashMap.put("length", b.size());

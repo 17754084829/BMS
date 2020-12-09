@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .login {
+        height: 260px;
+        width: 470px;
+        border: 1px solid gray;
+        border-style: solid;
+        position: fixed;
+        /*border-radius: 12px;*/
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 3px 3px 6px #f7f7f7;
+    }
+
+    .login .header {
+        margin: 0 auto;
+        background: #e2e2e2;
+        border-bottom: #F5F5F5;
+        line-height: 43px;
+        padding-left: 195px;
+        /*border-radius: 12px;*/
+    }
+    .user{
+        margin: 25px 58px;
+        
+    }
+    .psd{
+        margin: 25px 58px;
+        
+    }
+    .lg{
+        margin: 25px 104px;
+    }
+    .user input[type=text]{
+        width: 270px;
+        height: 34px;
+        text-indent: 44px;
+        background: #fff url(./img/用户.png) no-repeat 5px 3px;
+        background-size: 30px 30px;
+        
+    }
+    .psd input[type=password]{
+        width: 270px;
+        height: 34px;
+        text-indent: 44px;
+        background: #fff url(./img/密码.png) no-repeat 5px 3px;
+        background-size: 30px 30px;
+    }
+    .lg input[type=button]{
+        width: 270px;
+        height: 44px;
+        text-indent: -15px;
+        font-size: 18px;
+        background-color: #1890FF;
+        color: white;
+        font-family: '微软雅黑';
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <div class="login">
+        <div class="header">管理系统</div>
+        <form action="./2.html">
+        <div class="user">
+            账&nbsp;号:&nbsp;<input type="text" placeholder="请输入账号" id="name" autofocus>
+        </div>
+        <div class="psd">
+            密&nbsp;码:&nbsp;<input type="password" placeholder="请输入密码" id="pwd">
+        </div>
+        <div class="lg">
+            <input type="button" value="登&nbsp;录" id="submit">
+        </div></form>
+       
+    </div>
+    <script src="static/js/login.js"></script>
+    <script>
+        var oName = document.getElementById("name");
+        var oPwd = document.getElementById("pwd");
+        var oSubmit = document.getElementById("submit");
+        oName.onchange = function(e) {
+            // oName.setAttribute('value', e.target.value)
+            $.attr(oName, 'value', e.target.value);
+        }
+        oPwd.onchange = e => {
+            $.attr(oPwd, 'value', e.target.value);
+        }
+        oSubmit.onclick=function(){
+            var name = $.attr(oName, 'value');
+            var pwd = $.attr(oPwd, 'value');
+            if(name == null || name == '') {
+                alert('账号不能为空');
+                return;
+            }
+            else if(name.length < 8||name.length > 16) {
+                alert('账号长度不符合要求');
+                return;
+            }
+            
+            if(pwd == null || pwd == '') {
+                alert('密码不能为空');
+                return;
+            }
+            else if(pwd.length < 8 || pwd.length > 16) {
+                alert('密码错误');
+                return;
+            }
+            var data={
+                "username":name,
+                "passwd":pwd
+            }
+
+            var xmlHttp=new XMLHttpRequest();
+            const url='http://localhost:8080/BMS/login';
+            xmlHttp.open("GET", url+"?username=" + name+"&"+"passwd="+pwd,true);
+            xmlHttp.send(null);
+            xmlHttp.onreadystatechange=function(){
+                if(xmlHttp.readyState==4&&xmlHttp.status==200){
+                    var resp=xmlHttp.responseText;
+                    console.log(resp);
+                    const res=JSON.parse(resp);
+                    if(res.code === "200") {
+                        window.localStorage.setItem("user", res.data);
+                        window.location.href = '/BMS/admin.html';
+                        return;
+                        //把用户信息存储到浏览缓存中
+                    }else{
+                    	window.location.href = '/BMS/login.html';
+                    	return;
+                    }
+                }else{
+                    console.log(xmlHttp.readyState)
+                }
+            }
+            console.log(JSON.stringify(data))
+        }
+                
+    </script>
+</body>
+
+</html>
