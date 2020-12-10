@@ -11,33 +11,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import db.look.DB_lookuser;
+import db.look.DB_lookbook;
 import filter.util.Filter_utils;
-import model.Admin;
+import model.Book;
 
-/**
- * Servlet implementation class lookuser
- */
-
-@WebServlet(name = "look_alluser_servlet", urlPatterns = {"/look_alluser_servlet" })
-public class Look_alluser_servlet extends HttpServlet {
-
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+@WebServlet(name = "look_allbook_servlet", urlPatterns = {"/look_allbook_servlet" })
+public class Look_allbook_servlet extends HttpServlet {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HashMap<String, Object> hashMap = new HashMap<>();
-		ArrayList<Admin> b = DB_lookuser.alluser_look();
+		ArrayList<Book> b= DB_lookbook.allbook_look();
 		if (b != null) {
 			hashMap.put("code", "200");
-			req.getSession().setAttribute("verify", Filter_utils.getIpAddr(req));
+			request.getSession().setAttribute("verify", Filter_utils.getIpAddr(request));
 		} else {
 			hashMap.put("code", "-1");
 		}
 		hashMap.put("data", b);
 		hashMap.put("length", b.size());
 		
-		resp.setContentType("application/json");
-		PrintWriter printWriter = resp.getWriter();
+		response.setContentType("application/json");
+		PrintWriter printWriter = response.getWriter();
 		printWriter.write(Filter_utils.getJsonString(hashMap));
 		printWriter.flush();
 		printWriter.close();
+		doGet(request, response);
 	}
+
 }

@@ -10,7 +10,7 @@ import db.utils.C3P0_Data_Source;
 import model.Admin;
 
 public class DB_lookuser {
-	public static ArrayList<Admin> user_look(String name, int id) {
+	public static ArrayList<Admin> user_look(String name, int id,Date addtime) {
 		//创建资源链接对象
 		Connection connection = C3P0_Data_Source.getConnection();
 		PreparedStatement preparedStatement = null;
@@ -21,7 +21,7 @@ public class DB_lookuser {
         ArrayList list = new ArrayList();
 		try {
             //定义sql语句
-            String sql = "select * from admin where 1 = 1";
+            String sql = "select * from admin where usable=1 and 1 = 1";
             //admin id 不为空
             
             if (id != 0) {
@@ -30,22 +30,19 @@ public class DB_lookuser {
             }
           //admin name 不为空
             if (!"".equals(name.trim())){
-                sql = sql + " and name like ?";
+                sql = sql + " and name = ?";
                 list.add(name);
             }
-          //admin addtime 不为空
-            /*
             if(addtime!=null) {
-            	 sql = sql + " and addtime like ?";
+            	 sql = sql + " and addtime = ?";
                  list.add(addtime);
             }
-            */
+            preparedStatement = connection.prepareStatement(sql);
             if (list.size() > 0) {
                 for (int i = 0; i < list.size(); i++) {
                     preparedStatement.setObject(i+1,list.get(i));
                 }
             }
-            preparedStatement = connection.prepareStatement(sql);
             //执行sql
             rs = preparedStatement.executeQuery();
             //遍历查询
@@ -56,11 +53,12 @@ public class DB_lookuser {
 				ad.setSex(rs.getInt("sex"));
 				ad.setTelephone(rs.getString("telephone"));
 				ad.setAddtime(rs.getDate("addtime"));
+				ad.setUsable(rs.getInt("0"));
 				ads.add(ad);
 			}
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 		try {
 			C3P0_Data_Source.release(connection, preparedStatement, rs);
