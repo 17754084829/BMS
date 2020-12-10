@@ -20,7 +20,7 @@ import model.Admin;
  * Servlet implementation class lookuser
  */
 
-@WebServlet(name = "find_user_servlet", urlPatterns = {"/look_find" })
+@WebServlet(name = "find_user_servlet", urlPatterns = {"/find_user" })
 public class Find_user_servlet extends HttpServlet {
 
 	/**

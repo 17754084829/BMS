@@ -19,7 +19,7 @@ import model.Admin;
  * Servlet implementation class lookuser
  */
 
-@WebServlet(name = "look_alluser_servlet", urlPatterns = {"/look_alluser_servlet" })
+@WebServlet(name = "look_alluser_servlet", urlPatterns = {"/look_alluser" })
 public class Look_alluser_servlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

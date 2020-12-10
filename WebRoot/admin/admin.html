@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>admin</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../static/css/main.css" type="text/css">
     <link rel="stylesheet" href="../static/css/button.css" type="text/css">
     <link rel="stylesheet" href="../static/css/add.css" type="text/css">
@@ -40,7 +41,7 @@
     .box .menu {
         width: 267px;
         height: 877px;
-        background-color: rgb(54, 100, 185);
+        background-color: #043869;
     }
 
     .box .information {
@@ -56,7 +57,7 @@
     .sys {
         width: 265px;
         height: 65px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         background: url(./img/管理.png) no-repeat 20px 13px;
         background-size: 40px;
         color: white;
@@ -70,26 +71,34 @@
     .use {
         width: 266px;
         height: 42px;
-        /* border: 1px solid black; */
-        background-color: rgb(54, 100, 185);
+        border: 1px solid #043869;
+        background: #043869;
         color: white;
         cursor: pointer;
+        outline: none;
+        background: url(./img/account.png) no-repeat 20px 1px;
+        background-size: 35px;
     }
+
     .use:hover {
-    background: #000;
-}
+        background-color: #1890FF;
+    }
 
     .book {
         width: 266px;
         height: 42px;
-        /* border: 1px solid black; */
-        background-color: rgb(54, 100, 185);
+        border: 1px solid #043869;
+        background-color: #043869;
         color: white;
         cursor: pointer;
+        outline: none;
+        background: url(./img/office.png) no-repeat 20px 1px;
+        background-size: 35px;
     }
+
     .book:hover {
-    background: #000;
-}
+        background-color: #1890FF;
+    }
 
     .z1 {
         width: 1053px;
@@ -125,13 +134,14 @@
         float: right;
     }
 
-    .z2 form div{
+    .z2 form div {
         width: 868px;
         height: 79px;
-        
+
         margin: 0px 50px;
     }
-    #na{
+
+    #na {
         width: 290px;
         height: 40px;
         margin: 17px 13px;
@@ -139,7 +149,8 @@
         outline: none;
         font-size: 20px;
     }
-    #num{
+
+    #num {
         width: 290px;
         height: 40px;
         border-radius: 3px;
@@ -147,7 +158,8 @@
         margin: 17px 13px;
         font-size: 20px;
     }
-    #ti{
+
+    #ti {
         width: 290px;
         height: 40px;
         border-radius: 3px;
@@ -160,9 +172,11 @@
         width: 80px;
         height: 40px;
         margin: 10px 176px;
-        background-color:#1890FF;
+        background-color: #1890FF;
+        border: 1px solid white;
         color: white;
         cursor: pointer;
+        outline: none;
     }
 </style>
 
@@ -196,7 +210,7 @@
                         账&nbsp;&nbsp;号&nbsp;&nbsp;:<input type="text" id="num">
                     </div>
                     <div>
-                        创建日期&nbsp;&nbsp;:<input type="text" id="ti">
+                        录入时间&nbsp;&nbsp;:<input type="text" id="ti">
                         <input type="button" value="搜索">
                     </div>
                 </form>
@@ -221,6 +235,7 @@
                                         <th class="col6">录入时间</th>
                                         <th class="col7">角色</th>
                                         <th class="col8">联系方式</th>
+                                        <th class="col9">密码</th>
                                         <th class="col10">操作</th>
                                     </tr>
                                 </thead>
@@ -257,7 +272,11 @@
                                     </tr>
                                     <tr>
                                         <td class="updateTableTd1">性别</td>
-                                        <td class="updateTableTd2"><input type="text" id="colg1" /></td>
+                                        <td class="updateTableTd2"><input type="text" list="search1" id="colg1" />
+                                            <datalist id="search1">
+                                                <option value="男">男</option>
+                                                <option value="女">女</option>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="addTableTd1">录入时间</td>
@@ -265,12 +284,21 @@
                                     </tr>
                                     <tr>
                                         <td class="addTableTd1">角色</td>
-                                        <td class="addTableTd2"><input type="text" id="grade1" /></td>
+                                        <td class="addTableTd2"><input type="text" list="search2" id="grade1" />
+                                            <datalist id="search2">
+                                                <option value="超级用户">超级用户</option>
+                                                <option value="普通用户">普通用户</option>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="addTableTd1">联系方式</td>
                                         <td class="addTableTd2"><input type="text" id="stuClass1" /></td>
                                     </tr>
+                                    <tr>
+                                        <td class="addTableTd1">密码</td>
+                                        <td class="addTableTd2"><input type="text" id="age1" /></td>
+                                    </tr>
+
                                 </table>
                             </form>
                         </div>
@@ -294,7 +322,11 @@
                                 </tr>
                                 <tr>
                                     <td class="updateTableTd1">性别</td>
-                                    <td class="updateTableTd2"><input type="text" id="colg2" /></td>
+                                    <td class="updateTableTd2"><input type="text" list="search1" id="colg2" />
+                                        <datalist id="search1">
+                                            <option value="男">男</option>
+                                            <option value="女">女</option>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="updateTableTd1">录入时间</td>
@@ -308,10 +340,10 @@
                                     <td class="updateTableTd1">联系方式</td>
                                     <td class="updateTableTd2"><input type="text" id="stuClass2" /></td>
                                 </tr>
-                                <!-- <tr>
-                                    <td class="updateTableTd1">年龄</td>
+                                <tr>
+                                    <td class="updateTableTd1">密码</td>
                                     <td class="updateTableTd2"><input type="text" id="age2" /></td>
-                                </tr>  -->
+                                </tr>
                             </table>
                         </div>
                         <div style="text-align: right; height: 35px; padding-top: 5px; padding-right: 20px">
@@ -353,10 +385,10 @@
                                     <td class="examineTableTd1">联系方式</td>
                                     <td class="examineTableTd2"><input type="text" id="stuClass3" readonly /></td>
                                 </tr>
-                                <!-- <tr>
-                                    <td class="examineTableTd1">年龄</td>
+                                <tr>
+                                    <td class="examineTableTd1">密码</td>
                                     <td class="examineTableTd2"><input type="text" id="age3" readonly /></td>
-                                </tr>  -->
+                                </tr>
                             </table>
                         </div>
                         <div style="text-align: right; height: 35px; padding-top: 5px; padding-right: 20px">
@@ -370,7 +402,7 @@
                             <p>您确定删除以下用户的信息</p>
                             <p id="delMessage"></p>
                         </div>
-                        <div style="text-align: right; height: 35px; padding-top: 5px; padding-right: 20px">
+                        <div id="yes">
                             <button id="confirm" onclick="confirm()" style="display:block">确认</button>
                             <button id="delCancel" onclick="delCancel()">取消</button>
                         </div>
@@ -387,6 +419,114 @@
         var day = d.getDate();
         T.innerHTML = (year + "年" + month + "月" + day + "日");
     </script>
+
+
+    <!-- 新增用户请求 -->
+    <script>
+        const $ = {
+            //箭头函数，是es6的语法规则
+
+            attr: (...arguments) => {
+                if (arguments.length === 0)
+                    return;
+                if (arguments.length === 2) {
+                    return arguments[0].getAttribute(arguments[1])
+                }
+                if (arguments.length === 3) {
+                    return arguments[0].setAttribute(arguments[1], arguments[2]);
+                }
+            },
+
+        }
+    </script>
+    <script>
+
+        var oStuId1 = document.getElementById("stuId1");
+        var oName1 = document.getElementById("name1");
+        var oColg1 = document.getElementById("colg1");
+        var oProfession1 = document.getElementById("profession1");
+        var oGrade1 = document.getElementById("grade1");
+        var oStuClass1 = document.getElementById("stuClass1");
+        var oAge1 = document.getElementById("age1");
+        var oSubmit = document.getElementById("submit");
+        var oAddCancel = document.getElementById("addCancel");
+        oStuId1.onchange = function (e) {
+            $.attr(oStuId1, 'value', e.target.value);
+        }
+        oName1.onchange = function (e) {
+            // oName.setAttribute('value', e.target.value)
+            $.attr(oName1, 'value', e.target.value);
+        }
+        oColg1.onchange = e => {
+            $.attr(oColg1, 'value', e.target.value);
+        }
+        oAge1.onchange = e => {
+            $.attr(oAge1, 'value', e.target.value);
+        }
+        oSubmit.onclick = function () {
+            var stuId1 = $.attr(oStuId1, 'value');
+            var name1 = $.attr(oName1, 'value');
+            var colg1 = $.attr(oColg1, 'value');
+            var age1 = $.attr(oAge1, 'age1');
+
+
+            if (stuId1 == null || stuId1 == '') {
+                alert('账号不能为空');
+                return;
+            }
+            else if (isNaN(stuId1)) {
+                alert('账号不符合格式');
+                return;
+            }
+            else if (stuId1.length != 11) {
+                alert('账号长度不符合要求');
+                return;
+            }
+
+            if (name1 == null || name1 == '') {
+                alert('姓名不能为空');
+                return;
+            }
+            else if (name1.length > 5) {
+                alert('姓名错误');
+                return;
+            }
+
+
+
+            var data = {
+                "username": oName1,
+                "password": oAge1,
+                "sex": oColg1,
+                "addtime":oProfession1,
+                "roles":oGrade1,
+                "telephone":oStuClass1,
+                "usable":"1"
+            };
+
+            var xmlhttp = new XMLHttpRequest();
+            const url = 'https://localhost:8080/BMS/add-admin';
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var resp = xmlhttp.responseText;
+                    console.log(resp);
+                    const res = JSON.parse(resp);
+                    if (res.code === "200") {
+                        window.location.href = '/BMS/admin/admin.html';
+                        //把用户信息存储到浏览缓存中
+                    }
+                } else {
+                    console.log(xmlhttp.readyState);
+                }
+            }
+            console.log(JSON.stringify(data));
+            xmlhttp.open('post', url, true);
+            xmlhttp.send(data);
+        }
+    </script>
+
+
+
 </body>
 
 </html>

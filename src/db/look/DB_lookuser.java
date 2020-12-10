@@ -53,7 +53,7 @@ public class DB_lookuser {
 				ad.setSex(rs.getInt("sex"));
 				ad.setTelephone(rs.getString("telephone"));
 				ad.setAddtime(rs.getDate("addtime"));
-				ad.setUsable(rs.getInt("0"));
+				ad.setUsable(rs.getInt("usable"));
 				ads.add(ad);
 			}
 
@@ -88,6 +88,7 @@ public class DB_lookuser {
 				ad.setSex(rs.getInt("sex"));
 				ad.setTelephone(rs.getString("telephone"));
 				ad.setAddtime(rs.getDate("addtime"));
+				ad.setUsable(rs.getInt("usable"));
 				arr.add(ad);
 			}
 		} catch (Exception e) {

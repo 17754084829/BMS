@@ -10,21 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import db.delete.DB_delete;
+import db.delete.DB_deletebook;
 import filter.util.Filter_utils;
 
-@WebServlet(name="delete_servlet",urlPatterns= {"/deleteadmin"})
-public class Delete_Servlet extends HttpServlet {
+@WebServlet(name="deletebook_servlet",urlPatterns= {"/deletebook"})
+public class Deletebook_Servlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HashMap<String, String> hashMap = new HashMap<>();
-		int a=Integer.parseInt(req.getParameter("id"));
-		boolean b=DB_delete.verify_delete(a);
+		String a=req.getParameter("booknumber");
+		boolean b=DB_deletebook.verify_deletebook(a);
 		if(b) {
 			hashMap.put("code","200");
 			req.getSession().setAttribute("verify", Filter_utils.getIpAddr(req));
 			}else {
-				hashMap.put("code","-1");
+				hashMap.put("code", "-1");
 		}
 		resp.setContentType("application/json");
 		PrintWriter printWriter=resp.getWriter();
