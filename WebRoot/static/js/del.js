@@ -29,7 +29,7 @@ function del() {
     // var text = '';
     // var daima = `<td>${text}</td><td></td><td></td>`
     // div.append(daima);
-    var delNode = document.getElementById('delMessage');    
+    var delNode = document.getElementById('delMessage');
     delNode.innerText = message.join('\t');
 }
 
@@ -89,7 +89,7 @@ function confirm() {
         }
         document.getElementById('pageNum').innerText = pageNum - 1;
     }
-    
+
 }
 
 // 删除中的取消按钮
@@ -97,4 +97,42 @@ function delCancel() {
     // 关闭删除框架
     document.getElementById('delBlock').style.display = 'none';
     document.getElementById('totalBackground').style.display = 'none';
+}
+
+
+
+
+
+
+var oStuId1 = document.getElementById("stuId1");
+var oConfirm = document.getElementById("confirm");
+var oDelCancel = document.getElementById("delCancel");
+oStuId1.onchange = function (e) {
+    $.attr(oStuId1, 'value', e.target.value);
+}
+oSubmit.onclick = function () {
+    var stuId1 = $.attr(oStuId1, 'value');
+    var data = {
+        "stuId1": stuId1,
+    }
+
+    var xmlhttp = new XMLHttpRequest();
+    const url = 'https://www.fastmock.site/mock/4ee972e9afb65497481bd86c5891dece/_shop_01/api';
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var resp = xmlhttp.responseText;
+            console.log(resp);
+            const res = JSON.parse(resp);
+            if (res.code === 200) {
+                window.localStorage.setItem("user", res.data);
+                window.location.href = './2.html'
+                //把用户信息存储到浏览缓存中
+            }
+        } else {
+            console.log(xmlhttp.readyState)
+        }
+    }
+    console.log(JSON.stringify(data))
+    xmlhttp.open('post', url, true);
+    xmlhttp.send(JSON.stringify(data));
 }

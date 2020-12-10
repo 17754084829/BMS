@@ -19,11 +19,11 @@ function sumbit() {
     var name = document.getElementById('name1').value;
     var colg = document.getElementById('colg1').value;
     var profession = document.getElementById('profession1').value;
-     var grade = document.getElementById('grade1').value;
-     var stuClass = document.getElementById('stuClass1').value;
-    // var age = document.getElementById('age1').value;
+    var grade = document.getElementById('grade1').value;
+    var stuClass = document.getElementById('stuClass1').value;
+    var age = document.getElementById('age1').value;
     var nums = iTable.rows.length;
-    
+
     // 创建一行tr
     var iTr = document.createElement('tr');
 
@@ -62,15 +62,15 @@ function sumbit() {
     var iTd6 = document.createElement('td');
     iTd6.className = "col6";
     iTd6.appendChild(document.createTextNode(profession));
-     var iTd7 = document.createElement('td');
-     iTd7.className = "col7";
-     iTd7.appendChild(document.createTextNode(grade));
-     var iTd8 = document.createElement('td');
-     iTd8.className = "col8";
-     iTd8.appendChild(document.createTextNode(stuClass));
-    // var iTd9 = document.createElement('td');
-    // iTd9.className = "col9";
-    // iTd9.appendChild(document.createTextNode(age));
+    var iTd7 = document.createElement('td');
+    iTd7.className = "col7";
+    iTd7.appendChild(document.createTextNode(grade));
+    var iTd8 = document.createElement('td');
+    iTd8.className = "col8";
+    iTd8.appendChild(document.createTextNode(stuClass));
+    var iTd9 = document.createElement('td');
+    iTd9.className = "col9";
+    iTd9.appendChild(document.createTextNode(age));
     var iTd10 = document.createElement('td');
     iTd10.className = "col10";
     var examine = document.createElement('input');
@@ -93,9 +93,9 @@ function sumbit() {
     iTr.appendChild(iTd4);
     iTr.appendChild(iTd5);
     iTr.appendChild(iTd6);
-     iTr.appendChild(iTd7);
-     iTr.appendChild(iTd8);
-    // iTr.appendChild(iTd9);
+    iTr.appendChild(iTd7);
+    iTr.appendChild(iTd8);
+    iTr.appendChild(iTd9);
     iTr.appendChild(iTd10);
 
     // 将新增框架中的输入框值初始化
@@ -103,9 +103,9 @@ function sumbit() {
     document.getElementById('name1').value = null;
     document.getElementById('colg1').value = null;
     document.getElementById('profession1').value = null;
-     document.getElementById('grade1').value = null;
-     document.getElementById('stuClass1').value = null;
-    // document.getElementById('age1').value = null;
+    document.getElementById('grade1').value = null;
+    document.getElementById('stuClass1').value = null;
+    document.getElementById('age1').value = null;
 
     document.getElementById('nums').innerText = nums;
 
@@ -122,3 +122,6 @@ function addCancel() {
     document.getElementById('addBlock').style.display = 'none';
     document.getElementById('totalBackground').style.display = 'none';
 }
+
+
+

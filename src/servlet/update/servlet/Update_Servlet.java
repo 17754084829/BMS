@@ -18,7 +18,7 @@ import model.Admin;
 @WebServlet(name = "update_servlet", urlPatterns = { "/update" })
 public class Update_Servlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HashMap<String, String> hashMap = new HashMap<>();
 		Admin m = new Admin();
 		//id，姓名，密码，电话，性别
