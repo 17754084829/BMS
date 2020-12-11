@@ -1,4 +1,5 @@
-// 新增按钮
+
+
 function add() {
     // 打开新增框架
     document.getElementById('addBlock').style.display = 'block';
@@ -23,6 +24,37 @@ function sumbit() {
     var stuClass = document.getElementById('stuClass1').value;
     var age = document.getElementById('age1').value;
     var nums = iTable.rows.length;
+
+    if (stuId == null || stuId == '') {
+        alert('账号不能为空');
+        return;
+    }
+    else if (isNaN(stuId)) {
+        alert('账号不符合格式');
+        return;
+    }
+    else if (stuId.length != 11) {
+        alert('账号长度必须为11位');
+        return;
+    }
+
+    if (name == null || name== '') {
+        alert('姓名不能为空');
+        return;
+    }
+    else if (name.length > 4) {
+        alert('姓名不能超过五位');
+        return;
+    }
+    if (age == null || age == '') {
+        alert('密码不能为空');
+        return;
+    }
+    else if (age.length < 8 || age.length > 16) {
+        alert('密码错误');
+        return;
+    }
+
 
     // 创建一行tr
     var iTr = document.createElement('tr');
@@ -98,22 +130,75 @@ function sumbit() {
     iTr.appendChild(iTd9);
     iTr.appendChild(iTd10);
 
-    // 将新增框架中的输入框值初始化
-    document.getElementById('stuId1').value = null;
-    document.getElementById('name1').value = null;
-    document.getElementById('colg1').value = null;
-    document.getElementById('profession1').value = null;
-    document.getElementById('grade1').value = null;
-    document.getElementById('stuClass1').value = null;
-    document.getElementById('age1').value = null;
+    // // 将新增框架中的输入框值初始化
+    // document.getElementById('stuId1').value = null;
+    // document.getElementById('name1').value = null;
+    // document.getElementById('colg1').value = null;
+    // document.getElementById('profession1').value = null;
+    // document.getElementById('grade1').value = null;
+    // document.getElementById('stuClass1').value = null;
+    // document.getElementById('age1').value = null;
 
-    document.getElementById('nums').innerText = nums;
+    // document.getElementById('nums').innerText = nums;
 
     var pageNum = document.getElementById('pageNum').innerText;
     pageNum = parseInt(pageNum);
     for (var i = 10 * pageNum + 1; i <= nums; i++) {
         iTable.rows[i].style.display = 'none';
+
     }
+
+    var oStuId1 = document.getElementById("stuId1").value;
+    var oName1 = document.getElementById("name1").value;
+    var oColg1 = document.getElementById("colg1").value;
+    var oProfession1 = document.getElementById("profession1").value;
+    var oGrade1 = document.getElementById("grade1").value;
+    var oStuClass1 = document.getElementById("stuClass1").value;
+    var oAge1 = document.getElementById("age1").value;
+    var oSubmit = document.getElementById("submit");
+    var oAddCancel = document.getElementById("addCancel");
+    var data = {
+        "id": oStuId1,
+        "username": oName1,
+        "password": oAge1,
+        "sex": oColg1,
+        "addtime": oProfession1,
+        "roles": oGrade1,
+        "telephone": oStuClass1,
+        "usable": "1",
+    }
+
+    var xmlhttp = new XMLHttpRequest();
+    const url = 'http://localhost:8080/BMS/look_alluser';
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var resp = xmlhttp.responseText;
+            // document.getElementById("addMain").innerHTML = resp;
+            console.log(resp);
+            const res = JSON.parse(resp);
+            if (res.code === 200) {
+                window.localStorage.setItem("user", res.data);
+                // window.location.href = './admin.html'
+                //把用户信息存储到浏览缓存中
+            }
+        } else {
+            console.log(xmlhttp.readyState)
+        }
+    }
+    xmlhttp.open('post', url, true);
+    xmlhttp.setRequestHeader("Content-Type","application/json");
+    console.log(JSON.stringify(data))
+    xmlhttp.send(JSON.stringify(data));
+
+     // 将新增框架中的输入框值初始化
+     document.getElementById('stuId1').value = null;
+     document.getElementById('name1').value = null;
+     document.getElementById('colg1').value = null;
+     document.getElementById('profession1').value = null;
+     document.getElementById('grade1').value = null;
+     document.getElementById('stuClass1').value = null;
+     document.getElementById('age1').value = null;
+     document.getElementById('nums').innerText = nums;
 }
 
 // 新增中的取消按钮
@@ -122,6 +207,9 @@ function addCancel() {
     document.getElementById('addBlock').style.display = 'none';
     document.getElementById('totalBackground').style.display = 'none';
 }
+
+// 新增按钮
+
 
 
 

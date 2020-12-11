@@ -4,13 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Date;
 
 import db.utils.C3P0_Data_Source;
 import model.Admin;
 
 public class DB_lookuser {
-	public static ArrayList<Admin> user_look(String name, int id,Date addtime) {
+	public static ArrayList<Admin> user_look(int id) {
 		//创建资源链接对象
 		Connection connection = C3P0_Data_Source.getConnection();
 		PreparedStatement preparedStatement = null;
@@ -29,7 +28,7 @@ public class DB_lookuser {
                 list.add(id);
             }
           //admin name 不为空
-            if (!"".equals(name.trim())){
+            /*if (!"".equals(name.trim())){
                 sql = sql + " and name = ?";
                 list.add(name);
             }
@@ -37,6 +36,7 @@ public class DB_lookuser {
             	 sql = sql + " and addtime = ?";
                  list.add(addtime);
             }
+            */
             preparedStatement = connection.prepareStatement(sql);
             if (list.size() > 0) {
                 for (int i = 0; i < list.size(); i++) {
@@ -69,9 +69,6 @@ public class DB_lookuser {
 	}
 	
 
-	
-	
-	
 	public static ArrayList<Admin> alluser_look() {
 		//创建资源链接对象
 		Connection connection = C3P0_Data_Source.getConnection();
@@ -86,9 +83,10 @@ public class DB_lookuser {
 				ad.setId(rs.getInt("id"));
 				ad.setName(rs.getString("name"));
 				ad.setSex(rs.getInt("sex"));
-				ad.setTelephone(rs.getString("telephone"));
 				ad.setAddtime(rs.getDate("addtime"));
-				ad.setUsable(rs.getInt("usable"));
+				ad.setTelephone(rs.getString("telephone"));
+				ad.setRoles(rs.getInt("roles"));
+				ad.setPassword(rs.getString("password"));
 				arr.add(ad);
 			}
 		} catch (Exception e) {

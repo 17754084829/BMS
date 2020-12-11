@@ -1,5 +1,5 @@
 /*查看框架*/
-#examineBlock
+#sousuoBlock
 {
     width: 420px;
     height: 400px;
@@ -14,7 +14,7 @@
 }
 
 /*新增框架头*/
-#examineHeader
+#sousuoHeader
 {
     background-color: #1890FF;
     color: white;
@@ -25,37 +25,38 @@
     padding-top: 10px;
 }
 /*新增框架主体*/
-#examineMain
+#sousuoMain
 {
     height: 290px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #dadee1;
 }
-#examineMain table
+#sousuoMain table
 {
     width: 400px;
 }
-#examineMain tr
+#sousuoMain tr
 {
     height: 40px;
 }
-.examineTableTd1
+.sousuoTableTd1
 {
     padding-left: 15px;
     width: 120px;
     text-align: right;
 }
-.examineTableTd2
+.sousuoTableTd2
 {
     padding-left: 20px;
     width: 250px;
     text-align: left;
 }
-.examineTableTd2 input
+#sousuoCancel
 {
     color: #545454;
-    width: 150px;
-    background-color: #ebebe4;
+    width: 75px;
+    height: 30px;
+    background-color:white;
     border: 1px solid #a9a9a9;
 }

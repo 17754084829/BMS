@@ -15,7 +15,7 @@ import db.look.DB_lookbook;
 import filter.util.Filter_utils;
 import model.Book;
 
-@WebServlet(name = "look_allbook_servlet", urlPatterns = {"/look_allbook_servlet" })
+@WebServlet(name = "look_allbook_servlet", urlPatterns = {"/look_allbook" })
 public class Look_allbook_servlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HashMap<String, Object> hashMap = new HashMap<>();

@@ -22,7 +22,7 @@ import model.Admin;
 @WebServlet(name = "look_alluser_servlet", urlPatterns = {"/look_alluser" })
 public class Look_alluser_servlet extends HttpServlet {
 
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HashMap<String, Object> hashMap = new HashMap<>();
 		ArrayList<Admin> b = DB_lookuser.alluser_look();
 		if (b != null) {
