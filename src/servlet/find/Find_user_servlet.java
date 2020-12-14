@@ -30,10 +30,10 @@ public class Find_user_servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest res, HttpServletResponse resp) throws ServletException, IOException {
 		HashMap<String, Object> hashMap = new HashMap<>();
 		Admin admin = new Admin();
-		/*String nmaes=res.getParameter("name")==null?"":res.getParameter("name");*/
-		
 		int ids=Integer.parseInt(res.getParameter("id")==null?"0":res.getParameter("id"));
 		/*
+		
+		String names=res.getParameter("name")==null?"":res.getParameter("name");
 		String addtime1 = res.getParameter("addtime")==null?"0":res.getParameter("addtime");
 		Date addtime2=null;
 		if(addtime1!="0")

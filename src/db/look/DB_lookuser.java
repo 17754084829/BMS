@@ -22,21 +22,23 @@ public class DB_lookuser {
             //定义sql语句
             String sql = "select * from admin where usable=1 and 1 = 1";
             //admin id 不为空
+            /*
             
-            if (id != 0) {
-                sql = sql + " and id = ?";
-                list.add(id);
-            }
-          //admin name 不为空
-            /*if (!"".equals(name.trim())){
-                sql = sql + " and name = ?";
-                list.add(name);
-            }
             if(addtime!=null) {
             	 sql = sql + " and addtime = ?";
                  list.add(addtime);
             }
-            */
+             if (!"".equals(name.trim())){
+                sql = sql + " and name = ?";
+                list.add(name);
+            }
+
+             */
+            if (id != 0) {
+                sql = sql + " and id = ?";
+                list.add(id);
+            }
+           
             preparedStatement = connection.prepareStatement(sql);
             if (list.size() > 0) {
                 for (int i = 0; i < list.size(); i++) {

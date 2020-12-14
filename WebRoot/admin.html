@@ -64,7 +64,7 @@
                                 <tr id="diyi">
                                     <th class="col1">编号</th>
                                     <th class="col2">账号</th>
-                                    <th class="col3">姓名</th>
+                                    <th class="col3">用户名</th>
                                     <th class="col4">密码</th>
                                     <th class="col5">电话</th>
                                     <th class="col6">性别</th>
@@ -162,7 +162,7 @@
                                     <td class="updateTableTd2"><input type="text" id="id2" /></td>
                                 </tr>
                                 <tr>
-                                    <td class="updateTableTd1">姓名</td>
+                                    <td class="updateTableTd1">用户名</td>
                                     <td class="updateTableTd2"><input type="text" id="name2" /></td>
                                 </tr>
                                 <tr>
@@ -254,7 +254,7 @@
                                             <th class="coi1">编号</th>
                                             <th class="coi2">书编号</th>
                                             <th class="coi3">书ID</th>
-                                            <th class="coi4">书ID</th>
+                                            <th class="coi4">书名</th>
                                             <th class="coi5">库存</th>
                                             <th class="coi6">类别</th>
                                             <th class="coi7">位置</th>
@@ -308,7 +308,6 @@
                                             <td class="addTableTd1">作者</td>
                                             <td class="addTableTd2"><input type="text" id="author1" /></td>
                                         </tr>
-                                    </tr>
                                 </table>
                             </form>
                         </div>
@@ -317,42 +316,19 @@
                             <input type="button" value="取消" id="addCancel2" onclick="addCancel2()">
                         </div>
                     </div>
-                    <div id="updateBlock">
+                    <div id="updateBk">
                         <div id="updateHeader">修改书本信息</div>
                         <div id="updateMain">
-                            <table id="updateMessageTable">
-                                <tr>
-                                    <td class="addTableTd1">书号</td>
-                                    <td class="addTableTd2"><input type="text" id="booknumber2" /></td>
-                                </tr>
-                                <tr>
-                                    <td class="addTableTd1">编号</td>
-                                    <td class="addTableTd2"><input type="text" id="bookid2" /></td>
-                                </tr>
-                                <tr>
-                                    <td class="addTableTd1">书名</td>
-                                    <td class="addTableTd2"><input type="text" id="bookname2" /></td>
-                                </tr>
-                                <tr>
-                                    <td class="addTableTd1">库存</td>
-                                    <td class="addTableTd2"><input type="text" id="stock2" /></td>
-                                </tr>
-                                <tr>
-                                    <td class="addTableTd1">位置</td>
-                                    <td class="addTableTd2"><input type="text" id="location2" /></td>
-                                </tr>
-                                <tr>
-                                    <td class="addTableTd1">录入时间</td>
-                                    <td class="addTableTd2"><input type="text" id="bookdate2" /></td>
-                                    <tr>
-                                        <td class="addTableTd1">作者</td>
-                                        <td class="addTableTd2"><input type="text" id="author2" /></td>
-                                    </tr>
-                                </tr>
+                            <table id="updateMessageTable1">
+                                
                             </table>
-
+                        </div>
+                        <div id="tiqu3">
+                            <input type="button" value="提交" id="submit" onclick="baocun2()">
+                            <input type="button" value="取消" id="addCancel" onclick="upCancel3()">
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

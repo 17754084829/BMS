@@ -72,8 +72,8 @@
     height: 30px;
     width: 75px;
     background-color: #1890FF;
-    color: black;
     border: 1px solid #dadee1;
+    color:white;
 }
 
 /* book */
@@ -91,7 +91,7 @@
 #addBook
 {
     width: 420px;
-    height: 400px;
+    height: 430px;
     display: none;
     position: absolute;
     top: 20%;
@@ -143,13 +143,13 @@
     width: 150px;
 }
 #tiqu2{
-    margin: 8px 128px;
+    margin: 32px 128px;
 }
 #submit2{
     height: 30px;
     width: 75px;
     background-color: #1890FF;
-    color: black;
+    color: white;
     border: 1px solid #dadee1;
 }
 #addCancel2{

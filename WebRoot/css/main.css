@@ -6,14 +6,14 @@
 
 .box {
     width: 1169px;
-    height: 649px;
+    height: 696px;
     margin: 31px auto;
     border: 1px solid black;
 }
 
 .box .menu {
     width: 267px;
-    height: 649px;
+    height: 696px;
     background-color:#043869;
 }
 
@@ -89,7 +89,7 @@
 
 .z3 {
     width: 864px;
-    height: 436px;
+    height: 482px;
     border: 19px solid rgb(235, 235, 235);
 }
 
@@ -163,7 +163,7 @@ a {
     float: left;
 }
 #bd{
-    height: 350px;
+    height: 388px;
     width: 862px;
     border:none;
     margin-top: 10px;
@@ -177,7 +177,7 @@ a {
 #dn
 {
     width: 231px;
-    margin-left: 631px;
+    margin-left: 700px;
     /* border: 1px solid black; */
 }
 #dn p

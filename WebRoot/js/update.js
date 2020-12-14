@@ -93,6 +93,49 @@ function baocun() {
     	sex2="1";
     else
     	sex2="0";
+    var pattern = /^[a-zA-Z0-9]+$/;
+    var reg = /^[\u2E80-\u9FFF]+$/;
+    var rad = /(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]+$/;
+    var shuzi = /^[0-9]+$/;
+    if (sex2 === "男")
+        sex2 = "1";
+    else
+        sex2 = "0";
+    if (name2 == null || name2 == '') {
+        alert('用户名不能为空');
+        return;
+    }
+    else if (name2.length != 11) {
+        alert('用户名必须11位');
+        return;
+    } 
+    if (password2 == null || password2 == '') {
+        alert('密码不能为空');
+        return;
+    }
+    else if (password2.length < 8 || password2.length > 16) {
+        alert('密码必须为8-16位');
+        return;
+    } else if (!pattern.test(password2)) {
+        alert('密码不能含有特殊字符以及空格');
+        return;
+    } else if (!rad.test(password2)) {
+        alert('密码必须同时包含数字和字母');
+        return;
+    }
+    if (telephone2 == null || telephone2 == '') {
+        alert('电话不能为空');
+        return;
+    }
+    else if (telephone2.length != 11) {
+        alert('电话必须为11位');
+        return;
+    }  else if (!shuzi.test(telephone2)) {
+        alert('电话必须为数字');
+        return;
+    }
+
+
     var data = {
         "id": id2,
         "name": name2,
@@ -152,7 +195,7 @@ function unchange1(d) {
         "booknumber": booknumber,
     }
     var xmlhttp = new XMLHttpRequest();
-    const url = `http://localhost:8080/BMS/find_book?booknumber=${d}`;
+    const url = `http://localhost:8080/BMS/find_book?booknumber=${booknumber}`;
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var resp = xmlhttp.responseText;
@@ -216,7 +259,7 @@ function unchange1(d) {
 }
 
 function baocun2() {
-    document.getElementById('updateBlock').style.display = 'none';
+    document.getElementById('updateBk').style.display = 'none';
     var booknumber2 = document.getElementById('booknumber2').value;
     var bookid2 = document.getElementById('bookid2').value;
     var bookname2 = document.getElementById('bookname2').value;
@@ -225,6 +268,32 @@ function baocun2() {
     var location2 = document.getElementById('location2').value;
     var bookdate2 = document.getElementById('bookdate2').value;
     var author2 = document.getElementById('author2').value;
+    var pattern = /^[\a-\z\A-\Z0-9\u4E00-\u9FA5]+$/;
+    var reg = /^[\u2E80-\u9FFF]+$/
+    var shuzi = /^[0-9]+$/
+    if (bookname2 == null || bookname2 == '') {
+        alert('书名不能为空');
+        return;
+    } else if (!pattern.test(bookname2)) {
+        alert('书名不能含有特殊字符以及空格');
+        return;
+    }
+    if (author2 == null || author2 == '') {
+        alert('作者名不能为空');
+        return;
+    } else if (!pattern.test(author2)) {
+        alert('书名不能含有特殊字符以及空格');
+        return;
+    }
+    if (!shuzi.test(stock2)) {
+        alert('库存必须为数字');
+        return;
+    }
+    if (!pattern.test(kind2)) {
+        alert('图书类别不能含有特殊字符以及空格');
+        return;
+    }
+
     var data = {
         "booknumber": booknumber2,
         "bookid": bookid2,
@@ -256,20 +325,20 @@ function baocun2() {
     xmlhttp.open('post', url, true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8");
     console.log(JSON.stringify(data));
-    xmlhttp.send("booknumber="+booknumber+"&"+
-            "bookid="+bookid+
-            "&bookname="+bookname+
-            "&stock="+stock+
-            "&kind="+kind+
-            "&location="+location+
-            "&bookdate="+bookdate+
-            "&author="+author);
+    xmlhttp.send("booknumber="+booknumber2+
+            "&bookid="+bookid2+
+            "&bookname="+bookname2+
+            "&stock="+stock2+
+            "&kind="+kind2+
+            "&location="+location2+
+            "&bookdate="+bookdate2+
+            "&author="+author2);
 
 }
 
 // 修改中的取消按钮
 function upCancel3() {
-    document.getElementById('updateBlock').style.display = 'none';
+    document.getElementById('updateBk').style.display = 'none';
 }
 
 

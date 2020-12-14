@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <style>
-    *{
+    * {
         margin: 0;
         padding: 0;
     }
+
     .login {
         height: 260px;
         width: 470px;
@@ -32,27 +33,32 @@
         padding-left: 195px;
         /*border-radius: 12px;*/
     }
-    .user{
+
+    .user {
         margin: 25px 58px;
-        
+
     }
-    .psd{
+
+    .psd {
         margin: 25px 58px;
-        
+
     }
-    .lg{
+
+    .lg {
         margin: 25px 104px;
     }
-    .user input[type=text]{
+
+    .user input[type=text] {
         width: 270px;
         height: 34px;
         text-indent: 44px;
         background: #fff url(./img/用户.png) no-repeat 5px 3px;
         background-size: 30px 30px;
         outline: none;
-        
+
     }
-    .psd input[type=password]{
+
+    .psd input[type=password] {
         width: 270px;
         height: 34px;
         text-indent: 44px;
@@ -60,7 +66,8 @@
         background-size: 30px 30px;
         outline: none;
     }
-    .lg input[type=button]{
+
+    .lg input[type=button] {
         width: 270px;
         height: 44px;
         text-indent: -15px;
@@ -79,81 +86,86 @@
     <div class="login">
         <div class="header">管理系统</div>
         <form action="./2.html">
-        <div class="user">
-            账&nbsp;号:&nbsp;<input type="text" placeholder="请输入账号" id="name" autofocus>
-        </div>
-        <div class="psd">
-            密&nbsp;码:&nbsp;<input type="password" placeholder="请输入密码" id="pwd">
-        </div>
-        <div class="lg">
-            <input type="button" value="登&nbsp;录" id="submit">
-        </div></form>
-       
+            <div class="user">
+                用户名:&nbsp;<input type="text" placeholder="请输入用户名" id="name" autofocus>
+            </div>
+            <div class="psd">
+                密&nbsp;&nbsp;&nbsp;码:&nbsp;<input type="password" placeholder="请输入密码" id="pwd">
+            </div>
+            <div class="lg">
+                <input type="button" value="登&nbsp;录" id="submit">
+            </div>
+        </form>
+
     </div>
     <script src="./login.js"></script>
     <script>
         var oName = document.getElementById("name");
         var oPwd = document.getElementById("pwd");
         var oSubmit = document.getElementById("submit");
-        oName.onchange = function(e) {
+        oName.onchange = function (e) {
             // oName.setAttribute('value', e.target.value)
             $.attr(oName, 'value', e.target.value);
         }
         oPwd.onchange = e => {
             $.attr(oPwd, 'value', e.target.value);
         }
-        oSubmit.onclick=function(){
+        oSubmit.onclick = function () {
             var name = $.attr(oName, 'value');
             var pwd = $.attr(oPwd, 'value');
-            if(name == null || name == '') {
+            var rad = /(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]+$/;
+            var pattern = /^[a-zA-Z0-9]+$/;
+            if (name == null || name == '') {
                 alert('账号不能为空');
                 return;
             }
-            /*
-            else if(isNaN(name)) {
-                alert('账号不符合格式');
+            else if (name.length < 11 || name.length > 11) {
+                alert('账号长度必须为11位');
+                return;
+            } else if (!pattern.test(name)) {
+                alert('账号不能含有特殊字符以及空格');
                 return;
             }
-            */
-            else if(name.length < 11||name.length > 11) {
-                alert('账号长度不符合要求');
-                return;
-            }
-            
-            if(pwd == null || pwd == '') {
+            if (pwd == null || pwd == '') {
                 alert('密码不能为空');
                 return;
             }
-            else if(pwd.length < 8 || pwd.length > 16) {
-                alert('密码错误');
+            else if (pwd.length < 8 || pwd.length > 16) {
+                alert('密码必须为8-16位');
+                return;
+            } else if (!pattern.test(pwd)) {
+                alert('密码不能含有特殊字符以及空格');
+                return;
+            } else if (!rad.test(pwd)) {
+                alert('密码必须同时包含数字和字母');
                 return;
             }
-            var data={
-                "name":name,
-                "password":pwd
+            var data = {
+                "name": name,
+                "password": pwd
             }
 
-            var xmlhttp=new XMLHttpRequest();
-            const url='https://www.fastmock.site/mock/4ee972e9afb65497481bd86c5891dece/_shop_01/api';
-            xmlhttp.onreadystatechange=function(){
-                if(xmlhttp.readyState==4&&xmlhttp.status==200){
-                    var resp=xmlhttp.responseText;
+            var xmlhttp = new XMLHttpRequest();
+            const url = 'http://localhost:8080/BMS/login?username=' + data.name + "&passwd=" + data.password;
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var resp = xmlhttp.responseText;
                     console.log(resp);
-                    const res=JSON.parse(resp);
-                    if(res.code === 200) {
+                    const res = JSON.parse(resp);
+                    if (res.code === "200") {
                         window.localStorage.setItem("user", res.data);
                         window.location.href = './admin.html'
                         //把用户信息存储到浏览缓存中
                     }
-                }else{
+                } else {
                     console.log(xmlhttp.readyState)
                 }
             }
             console.log(JSON.stringify(data))
-            xmlhttp.open('post',url,true);
-            xmlhttp.send(JSON.stringify(data));
+            xmlhttp.open('GET', url, true);
+            xmlhttp.send(null);
         }
-                
+
     </script>
 </body>
 
