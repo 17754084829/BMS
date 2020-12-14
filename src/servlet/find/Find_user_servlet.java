@@ -2,7 +2,6 @@ package servlet.find;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -28,24 +27,24 @@ public class Find_user_servlet extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest res, HttpServletResponse resp) throws ServletException, IOException {
 		HashMap<String, Object> hashMap = new HashMap<>();
 		Admin admin = new Admin();
-		/*String nmaes=req.getParameter("name")==null?"":req.getParameter("name");*/
+		/*String nmaes=res.getParameter("name")==null?"":res.getParameter("name");*/
 		
-		int ids=Integer.parseInt(req.getParameter("id")==null?"0":req.getParameter("id"));
+		int ids=Integer.parseInt(res.getParameter("id")==null?"0":res.getParameter("id"));
 		/*
-		String addtime1 = req.getParameter("addtime")==null?"0":req.getParameter("addtime");
+		String addtime1 = res.getParameter("addtime")==null?"0":res.getParameter("addtime");
 		Date addtime2=null;
 		if(addtime1!="0")
 			addtime2 = new Date(Long.parseLong(addtime1));
 		*/
 		ArrayList<Admin> b = DB_lookuser.user_look(ids);
 		if (b != null) {
-			hashMap.put("200", "查询结果为：");
-			req.getSession().setAttribute("verify", Filter_utils.getIpAddr(req));
+			hashMap.put("code", "200");
+			res.getSession().setAttribute("verify", Filter_utils.getIpAddr(res));
 		} else {
-			hashMap.put("-1", "无法查询！");
+			hashMap.put("code", "-1");
 		}
 		hashMap.put("data", b);
 		hashMap.put("length", b.size());

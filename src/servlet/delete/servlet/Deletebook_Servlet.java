@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import db.delete.DB_deletebook;
 import filter.util.Filter_utils;
 
-@WebServlet(name="deletebook_servlet",urlPatterns= {"/deletebook"})
+@WebServlet(name="deletebook_servlet",urlPatterns= {"/deletedbook"})
 public class Deletebook_Servlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

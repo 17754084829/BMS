@@ -1,0 +1,36 @@
+#delBlock {
+    width: 317px;
+    height: 181px;
+    display: none;
+    position: absolute;
+    color: white;
+    top: 38%;
+    left: 37%;
+    background-color: rgb(132, 228, 108);
+    border-radius: 5px;
+    z-index: 2;
+    border: 1px solid black;
+}
+h1{
+    margin:26px 58px;
+}
+#tiq{
+    margin-left:112px;
+    margin-top: 45px;
+}
+#addCancel {
+    height: 30px;
+    width: 75px;
+    background-color: white;
+    color: black;
+    border: 1px solid #dadee1;
+    margin-left: 5px;
+}
+#sub{
+    height: 30px;
+    width: 75px;
+    color: black;
+    border: 1px solid #dadee1;
+    margin-left: 5px;
+    background-color: rgb(110, 110, 228);
+}

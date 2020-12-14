@@ -1,17 +1,10 @@
   
-#add     /*新增*/
-{
-    height: 30px;
-    width: 75px;
-    background-color: #1890FF;
-    color: white;
-    border: 1px solid black;
-}
+
 #del     /*删除*/
 {
     height: 30px;
     width: 75px;
-    background-color: rgb(187, 187, 187);
+    background-color: #d9534f;
     color: white;
     border: 1px solid black;
     margin-left: 5px;
@@ -22,7 +15,9 @@
     width: 75px;
     background-color: #1890FF;
     color: white;
-    border: 1px solid black;
+    border: none;
+    outline: none;
+    cursor: pointer;
     /* float: right; */
 }
 #next     /*下一页*/
@@ -31,8 +26,10 @@
     width: 75px;
     background-color: #1890FF;
     color: white;
-    border: 1px solid black;
+    border: none;
     margin-left: 5px;
+    outline: none;
+    cursor: pointer;
     /* float: right; */
 }
 #examine     /*查看*/
@@ -53,23 +50,7 @@
     background: none;
     /*background-color: #eef1f8;*/
 }
-#submit     /*提交*/
-{
-    height: 30px;
-    width: 75px;
-    background-color: #1890FF;
-    color: black;
-    border: 1px solid #dadee1;
-}
-#addCancel     /*新增中的取消*/
-{
-    height: 30px;
-    width: 75px;
-    background-color: white;
-    color: black;
-    border: 1px solid #dadee1;
-    margin-left: 5px;
-}
+
 #preservation     /*保存*/
 {
     height: 30px;

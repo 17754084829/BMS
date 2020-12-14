@@ -18,7 +18,7 @@ import model.Book;
 @WebServlet(name = "bookupdate_servlet", urlPatterns = { "/update/book" })
 public class BookUpdate_Servlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HashMap<String, String> hashMap = new HashMap<>();
 		Book book = new Book();
 		//编号，bookid(int)，书名，库存(int)，种类，位置，作者
@@ -33,10 +33,10 @@ public class BookUpdate_Servlet extends HttpServlet {
 					
 		boolean b = Book_update.update(book);
 		if (b) {
-			hashMap.put("200", "修改成功");
+			hashMap.put("code", "200");
 			req.getSession().setAttribute("verify", Filter_utils.getIpAddr(req));
 		} else {
-			hashMap.put("-1", "修改失败");
+			hashMap.put("code", "-1");
 		}
 		resp.setContentType("application/json");
 		PrintWriter printWriter = resp.getWriter();

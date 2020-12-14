@@ -30,10 +30,10 @@ public class ReaderUpdate_Servlet extends HttpServlet {
 				
 		boolean b = Reader_update.update(reader);
 		if (b) {
-			hashMap.put("200", "修改成功");
+			hashMap.put("code", "200");
 			req.getSession().setAttribute("verify", Filter_utils.getIpAddr(req));
 		} else {
-			hashMap.put("-1", "修改失败");
+			hashMap.put("code", "-1");
 		}
 		resp.setContentType("application/json");
 		PrintWriter printWriter = resp.getWriter();

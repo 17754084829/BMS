@@ -51,6 +51,7 @@ public class DB_lookuser {
 				ad.setId(rs.getInt("id"));
 				ad.setName(rs.getString("name"));
 				ad.setSex(rs.getInt("sex"));
+				ad.setPassword(rs.getString("password"));
 				ad.setTelephone(rs.getString("telephone"));
 				ad.setAddtime(rs.getDate("addtime"));
 				ad.setUsable(rs.getInt("usable"));

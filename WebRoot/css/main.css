@@ -1,0 +1,356 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 1169px;
+    height: 649px;
+    margin: 31px auto;
+    border: 1px solid black;
+}
+
+.box .menu {
+    width: 267px;
+    height: 649px;
+    background-color:#043869;
+}
+
+.box .information {
+    width: 902px;
+    height: 739px;
+    /* border: 1px solid black; */
+}
+
+.box div {
+    float: left;
+}
+
+.sys {
+    width: 265px;
+    height: 65px;
+    /* border: 1px solid black; */
+    background: url(../img/管理.png) no-repeat 20px 13px;
+    background-size: 40px;
+    color: white;
+}
+
+.sys div {
+    margin: 18px 86px;
+    font-size: 22px;
+}
+
+.use {
+    width: 267px;
+    height: 42px;
+    border: 1px solid #043869;
+    background-color: #043869;
+    background: url(../img/account.png) no-repeat 56px 4px;
+    background-size: 30px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+.use:hover {
+    background-color: #1890FF;
+}
+
+.book {
+    width: 267px;
+    height: 42px;
+    border: 1px solid #043869;
+    background-color: #043869;
+    background: url(../img/office.png) no-repeat 56px 4px;
+    background-size: 30px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+.book:hover {
+    background-color: #1890FF;
+}
+
+.z1 {
+    width: 900px;
+    height: 67px;
+    /* border: 1px solid black; */
+}
+
+.z2 {
+    width: 864px;
+    height: 70px;
+    border: 19px solid rgb(235, 235, 235);
+
+}
+
+.z3 {
+    width: 864px;
+    height: 436px;
+    border: 19px solid rgb(235, 235, 235);
+}
+
+#time {
+    /* border: 1px solid black; */
+    margin-right:  100px;
+    margin-top: 21px;
+}
+
+#ex {
+
+    margin: 21px 16px;
+}
+
+a {
+
+    text-decoration: none;
+}
+
+.z1 div {
+    float: right;
+}
+
+.z2 form div {
+    width: 581px;
+    height: 64px;
+    /* border: 1px solid black; */
+    margin: 4px 116px;
+}
+
+#na {
+    width: 242px;
+    height: 38px;
+    margin: 11px 20px;
+    /* border-radius: 8px; */
+    outline: none;
+    font-size: 13px;
+    text-indent: 15px;
+}
+
+.z2 form div input[type=button] {
+    width: 92px;
+    height: 40px;
+    margin-left: 143px;
+    background-color: #1890FF;
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+
+
+
+#total div{
+    float: none;
+}
+
+#hed
+{
+    height: 40px;
+    text-align: left;
+    /* border: 1px solid black; */
+    float: left;
+}
+.z3 #total #hed div{
+    height: 27px;
+    width: 88px;
+    margin: 11px 28px;
+    /* border: 1px solid black; */
+    float: left;
+}
+#bd{
+    height: 350px;
+    width: 862px;
+    border:none;
+    margin-top: 10px;
+    overflow: hidden;
+}
+#myTable tr td{
+    font-size: 10px;
+}
+
+
+#dn
+{
+    width: 231px;
+    margin-left: 631px;
+    /* border: 1px solid black; */
+}
+#dn p
+{
+    display: inline;
+}
+#playbook{
+    display: none;
+}
+/* 
+用户 */
+#ch table tr th{
+    /* width: 200px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid black; */
+    background-color: white;
+}
+.col1{
+    width: 57px;
+    height: 30.8px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.col2{
+    width: 120px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.col3{
+    width: 84px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.col4{
+    width: 120px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.col5{
+    width: 120px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.col6{
+    width: 47px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.col7{
+    width: 109px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.col8{
+    width: 90px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.col9{
+    width: 94px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+#diyi{
+    background-color:rgb(235, 235, 235);
+}
+
+/* 书 */
+#nae{
+    width: 242px;
+    height: 38px;
+    margin: 11px 20px;
+    /* border-radius: 8px; */
+    outline: none;
+    font-size: 13px;
+    text-indent: 15px;
+}
+
+#ch table tr th{
+    /* width: 200px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid black; */
+    background-color: white;
+}
+.coi1{
+    width: 57px;
+    height: 30.8px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.coi2{
+    width: 111px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.coi3{
+    width: 120px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.coi4{
+    width: 80px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.coi5{
+    width: 90px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.coi6{
+    width: 90px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.coi7{
+    width: 110px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.coi8{
+    width: 90px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+.coi9{
+    width: 94px;
+    height: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid black;
+}
+
+#dier{
+    background-color:rgb(235, 235, 235);
+}
+
+
+
+

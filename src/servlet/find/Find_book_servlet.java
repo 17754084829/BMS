@@ -25,27 +25,27 @@ public class Find_book_servlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest res, HttpServletResponse resp) throws ServletException, IOException {
 		HashMap<String, Object> hashMap = new HashMap<>();
 		Book book = new Book();
-		String booknumber=request.getParameter("booknumber")==null?"":request.getParameter("booknumber");
-		int bookid=Integer.parseInt(request.getParameter("bookid")==null?"0":request.getParameter("bookid"));
-		String bookname=request.getParameter("bookname")==null?"":request.getParameter("bookname");
-		String kind=request.getParameter("kind")==null?"":request.getParameter("kind");
-		String author=request.getParameter("author")==null?"":request.getParameter("author");
+		String booknumber=res.getParameter("booknumber")==null?"":res.getParameter("booknumber");
+		int bookid=Integer.parseInt(res.getParameter("bookid")==null?"0":res.getParameter("bookid"));
+		String bookname=res.getParameter("bookname")==null?"":res.getParameter("bookname");
+		String kind=res.getParameter("kind")==null?"":res.getParameter("kind");
+		String author=res.getParameter("author")==null?"":res.getParameter("author");
 		
 		ArrayList<Book> b = DB_lookbook.book_look(booknumber,bookid,bookname,kind,author);
 		if (b != null) {
-			hashMap.put("200", "查询结果为：");
-			request.getSession().setAttribute("verify", Filter_utils.getIpAddr(request));
+			hashMap.put("code", "200");
+			res.getSession().setAttribute("verify", Filter_utils.getIpAddr(res));
 		} else {
-			hashMap.put("-1", "无法查询！");
+			hashMap.put("code", "-1");
 		}
 		hashMap.put("data", b);
 		hashMap.put("length", b.size());
 		
-		response.setContentType("application/json");
-		PrintWriter printWriter = response.getWriter();
+		resp.setContentType("application/json");
+		PrintWriter printWriter = resp.getWriter();
 		printWriter.write(Filter_utils.getJsonString(hashMap));
 		printWriter.flush();
 		printWriter.close();

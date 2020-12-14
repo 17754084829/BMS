@@ -15,9 +15,9 @@ function examine(obj) {
     document.getElementById('name3').value = iTds[3].innerText;
     document.getElementById('colg3').value = iTds[4].innerText;
     document.getElementById('profession3').value = iTds[5].innerText;
-    document.getElementById('grade3').value = iTds[6].innerText;
-    document.getElementById('stuClass3').value = iTds[7].innerText;
-    document.getElementById('age3').value = iTds[8].innerText;
+     document.getElementById('grade3').value = iTds[6].innerText;
+     document.getElementById('stuClass3').value = iTds[7].innerText;
+    // document.getElementById('age3').value = iTds[8].innerText;
 }
 
 // 查看中的取消按钮

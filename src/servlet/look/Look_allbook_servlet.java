@@ -34,7 +34,6 @@ public class Look_allbook_servlet extends HttpServlet {
 		printWriter.write(Filter_utils.getJsonString(hashMap));
 		printWriter.flush();
 		printWriter.close();
-		doGet(request, response);
 	}
 
 }

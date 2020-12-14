@@ -1,3 +1,4 @@
+
 function previous() {
     var iTable = document.getElementById('myTable');
     var pageNum = document.getElementById('pageNum').innerText;
